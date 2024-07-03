@@ -18,6 +18,10 @@ describe('Practice x-path',()=>{
         cy.wait(2000)
         cy.get('.dismissButton').click();
         cy.wait(2000);
+        //multiple clicks 
+        // cy.get('.dismissButton').click().click().click();
+        //also
+        //for loop to click on zoom option multiple times
         for(let i=1;i<4;i++)
         {
             cy.get('[aria-label="Zoom in"]').click();
