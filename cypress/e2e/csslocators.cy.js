@@ -93,7 +93,30 @@ describe('CSS Locators', () => {
     .should('eq','http://www.automationpractice.pl/index.php')
     .should("not.contain","bungeeJumping")
     
+  })
 
+  it.only('explicit assertions',()=>{
+    cy.visit('http://www.automationpractice.pl/index.php')
+    // cy.get("a[title='View my shopping cart']").should('be.visible')
+    cy.get("a[title='Log in to your customer account']").click()
+    cy.wait(2000)
+    cy.get('#email').type('kristoffroy@gmail.com')
+    cy.wait(2000)
+    cy.get('#passwd').type('Kunal123')
+    cy.wait(2000)
+    cy.get('#SubmitLogin').click()
+    cy.wait(2000)
+    let name="Kunal Roy"
+    cy.get("a[title='View my customer account'] span").then((x)=>{
+      let newName=x.text()
+      expect(newName).to.equal(name)
+      cy.wait(3000)
+      expect(newName).to.not.equal("lomor")
+    })
+    cy.get(2000)
+    cy.get("li > .btn > span").click()
+    cy.wait(2000)
+    cy.get("a[title='Log me out']").click()
   })
 
 })
