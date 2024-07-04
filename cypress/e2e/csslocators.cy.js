@@ -109,9 +109,14 @@ describe('CSS Locators', () => {
     let name="Kunal Roy"
     cy.get("a[title='View my customer account'] span").then((x)=>{
       let newName=x.text()
+      //BDD Approach
       expect(newName).to.equal(name)
       cy.wait(3000)
       expect(newName).to.not.equal("lomor")
+
+      //TDD Approach
+      assert.equal(newName,name)
+
     })
     cy.get(2000)
     cy.get("li > .btn > span").click()
