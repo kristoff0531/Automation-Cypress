@@ -9,7 +9,7 @@ describe('CSS Locators', () => {
     
   })
 
-  //Test case to fail
+  //Test case should fail
   it('Should fail for search results', ()=>{
     cy.visit('http://www.automationpractice.pl/index.php')
     cy.get('#search_query_top').type('T-Shirt')
