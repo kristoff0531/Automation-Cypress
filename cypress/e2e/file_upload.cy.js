@@ -1,3 +1,6 @@
+
+// npm install --save-dev cypress-file-upload
+
 describe('File Upload', () => {
   it('Single file upload',()=> {
     cy.visit('http://the-internet.herokuapp.com/upload');
